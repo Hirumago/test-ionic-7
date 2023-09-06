@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
+import { AppLauncherService } from '../app-launcher/service/app-launcher.service';
 
 @Component({
   selector: 'app-tab2',
@@ -10,7 +11,19 @@ import { ExploreContainerComponent } from '../explore-container/explore-containe
   imports: [IonicModule, ExploreContainerComponent]
 })
 export class Tab2Page {
+  appLaunched:boolean
 
-  constructor() {}
+  constructor(private appLauncherService: AppLauncherService) {
+    this.appLaunched = false
+
+    this.appLauncherService.launchApp().subscribe({
+      error(err) {
+        console.error('LaunchApp - something wrong occurred: ' + err);
+      },
+      complete() {
+          console.log('LaunchApp - done')
+      },
+    })
+  }
 
 }
