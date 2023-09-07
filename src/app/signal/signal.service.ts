@@ -1,20 +1,18 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class SignalService {
-  array: Array<number>
+    array: Array<number>;
 
-  constructor() { 
-    this.array = [
-      1,7,26,33
-    ]
-  }
+    constructor() {
+        this.array = [1, 7, 26, 33]
+    }
 
-  getArray(): Promise<Array<number>> {
-    return new Promise((resolve, reject) => {
-      resolve(this.array)
-    })
-  }
+    getArray(): Promise<Array<number>> {
+        return new Promise((resolve, reject) => {
+            resolve(this.array)
+        })
+    }
 }

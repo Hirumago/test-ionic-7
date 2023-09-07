@@ -1,32 +1,32 @@
-import { enableProdMode, importProvidersFrom } from '@angular/core';
-import { bootstrapApplication } from '@angular/platform-browser';
-import { RouteReuseStrategy, provideRouter } from '@angular/router';
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-import { IonicStorageModule } from '@ionic/storage-angular';
-import { Drivers } from '@ionic/storage';
+import { enableProdMode, importProvidersFrom } from '@angular/core'
+import { bootstrapApplication } from '@angular/platform-browser'
+import { RouteReuseStrategy, provideRouter } from '@angular/router'
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular'
+import { IonicStorageModule } from '@ionic/storage-angular'
+import { Drivers } from '@ionic/storage'
 
-import { routes } from './app/app.routes';
-import { AppComponent } from './app/app.component';
-import { environment } from './environments/environment';
+import { routes } from './app/app.routes'
+import { AppComponent } from './app/app.component'
+import { environment } from './environments/environment'
 
 if (environment.production) {
-  enableProdMode();
+    enableProdMode()
 }
 
 bootstrapApplication(AppComponent, {
-  providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    importProvidersFrom(IonicModule.forRoot({
-      innerHTMLTemplatesEnabled: true
-    })),
-    importProvidersFrom(
-      IonicStorageModule.forRoot(
-        {
-          name: '__mydb',
-          driverOrder: [Drivers.IndexedDB, Drivers.LocalStorage]
-        }
-      )
-    ),
-    provideRouter(routes),
-  ],
-});
+    providers: [
+        { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+        importProvidersFrom(
+            IonicModule.forRoot({
+                innerHTMLTemplatesEnabled: true
+            })
+        ),
+        importProvidersFrom(
+            IonicStorageModule.forRoot({
+                name: '__mydb',
+                driverOrder: [Drivers.IndexedDB, Drivers.LocalStorage]
+            })
+        ),
+        provideRouter(routes)
+    ]
+})

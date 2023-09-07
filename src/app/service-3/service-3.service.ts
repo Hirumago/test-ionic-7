@@ -1,16 +1,15 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class Service3Service {
+    constructor() {}
 
-  constructor() { }
-
-  test(): Promise<boolean>  {
-    return new Promise((resolve,  reject) =>  {
-        console.log('Chargement de version')
-        resolve(true)
-    })
-  }
+    test(): Promise<boolean> {
+        return new Promise((resolve, reject) => {
+            console.log('Chargement de version')
+            resolve(true)
+        })
+    }
 }
