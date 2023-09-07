@@ -73,7 +73,6 @@
   "description": "An Ionic project",
   "lint-staged": {
     "src/**/*.ts": [
-      "ng-lint-staged lint --fix --",
       "eslint"
     ],
     "src/**/*.{js,html,css}": "prettier --write"
