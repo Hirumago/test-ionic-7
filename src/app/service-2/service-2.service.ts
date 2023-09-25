@@ -19,25 +19,13 @@ export class Service2Service {
             for (let i = 0; i < 5; i++) {
                 from(this.service4.test(i)).subscribe({
                     next(x) {
-                        console.log(
-                            'Migration de données - avis ' +
-                                i +
-                                ' - got value ' +
-                                x
-                        )
+                        console.log('Migration de données - avis ' + i + ' - got value ' + x)
                     },
                     error(err) {
-                        console.error(
-                            'Migration de données - avis ' +
-                                i +
-                                ' - something wrong occurred: ' +
-                                err
-                        )
+                        console.error('Migration de données - avis ' + i + ' - something wrong occurred: ' + err)
                     },
                     complete() {
-                        console.log(
-                            'Migration de données - avis ' + i + ' - done'
-                        )
+                        console.log('Migration de données - avis ' + i + ' - done')
                     }
                 })
             }

@@ -76,20 +76,12 @@ export class AppComponent {
 
     async testAsync() {
         // const test = await this.testTimeout()
-        const test = from(this.testTimeout()).subscribe(() =>
-            console.log('terminé 1')
-        )
-        console.log('test')
-        console.log(test)
+        const test = from(this.testTimeout()).subscribe(() => console.log('terminé 1'))
         const test2 = await this.testTimeout(true).catch((e) => {
             console.log('test2 error')
             console.log(e)
         })
-        const test3 = from(this.testTimeout()).subscribe(() =>
-            console.log('terminé 3')
-        )
-        console.log('test3')
-        console.log(test3)
+        const test3 = from(this.testTimeout()).subscribe(() => console.log('terminé 3'))
     }
 
     testPromiseAll() {

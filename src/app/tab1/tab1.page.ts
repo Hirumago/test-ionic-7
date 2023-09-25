@@ -1,6 +1,5 @@
 import { Component } from '@angular/core'
 import { AlertController, IonicModule, IonicSafeString } from '@ionic/angular'
-import { ExploreContainerComponent } from '../explore-container/explore-container.component'
 import { SignalComponent } from '../component/signal/signal.component'
 
 @Component({
@@ -8,7 +7,7 @@ import { SignalComponent } from '../component/signal/signal.component'
     templateUrl: 'tab1.page.html',
     styleUrls: ['tab1.page.scss'],
     standalone: true,
-    imports: [IonicModule, ExploreContainerComponent, SignalComponent]
+    imports: [IonicModule, SignalComponent]
 })
 export class Tab1Page {
     constructor(private alertController: AlertController) {}
@@ -20,8 +19,7 @@ export class Tab1Page {
             subHeader: 'Sous titre',
             animated: true,
             message: new IonicSafeString(
-                'Description de l\'alert box' +
-                    '<ion-progress-bar type="indeterminate"></ion-progress-bar>'
+                'Description de l\'alert box' + '<ion-progress-bar type="indeterminate"></ion-progress-bar>'
             ),
             buttons: [
                 {

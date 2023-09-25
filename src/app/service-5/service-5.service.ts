@@ -9,9 +9,7 @@ export class Service5Service {
     test(nb: number): Promise<boolean> {
         return new Promise((resolve, reject) => {
             if (nb === 2) {
-                console.log(
-                    'Migration de données - avis ' + nb + ' - error - service 5'
-                )
+                console.log('Migration de données - avis ' + nb + ' - error - service 5')
                 reject(false)
             }
             resolve(true)

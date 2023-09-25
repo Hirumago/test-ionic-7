@@ -4,12 +4,6 @@ import { Service2Service } from 'src/app/service-2/service-2.service'
 import { Service3Service } from 'src/app/service-3/service-3.service'
 import { Observable, catchError, concatMap, from, map, of } from 'rxjs'
 
-var a
-const b
-let c
-d
-allo = 'ici'
-
 @Injectable({
     providedIn: 'root'
 })

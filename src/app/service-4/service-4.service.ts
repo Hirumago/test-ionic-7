@@ -16,10 +16,7 @@ export class Service4Service {
                 from(this.service5.test(nb)).subscribe({
                     error(err) {
                         console.error(
-                            'Migration de données - avis ' +
-                                nb +
-                                ' - error - something wrong occurred: ' +
-                                err
+                            'Migration de données - avis ' + nb + ' - error - something wrong occurred: ' + err
                         )
                     }
                     // complete() {
